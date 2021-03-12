@@ -17,6 +17,7 @@ fn main() -> Result<(), CryptoAPIError> {
     
     // a list of messages that we encrypt
     let messages: Vec<f64> = vec![106.276, 104.3, 100.12, 101.1, 107.78];
+    println!("Mensaje original: {:?}", messages);
     
     let start_encryption1 = Instant::now();
     let ciphertext_before = VectorLWE::encode_encrypt(&secret_key_before, &messages, &encoder)?;
