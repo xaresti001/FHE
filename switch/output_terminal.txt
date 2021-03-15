@@ -1,0 +1,22 @@
+
+
+PRIMERA IMPLEMENTACIÓN: cifrado y descifrado 
+
+Mensaje original: [-6.276, 4.3, 0.12, -1.1, 7.78]
+Mensaje descifrado: [-6.276311834446888, 4.300797560908983, 0.11958288846012799, -1.0992879311354091, 7.780908821681233]
+Tiempo generando claves: 814.217µs
+Tiempo de cifrado: 333.284µs
+Tiempo de descifrado: 172.218µs
+Tiempo de ejecución total: 1.573648ms
+
+ //////////////////////////////////// 
+
+SEGUNDA IMPLEMENTACIÓN: Key Switching 
+
+Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
+Mensaje descifrado: [106.27600029677762, 104.30000028969069, 100.12000002991729, 101.09999985270913, 107.78000022549983]
+Tiempo generando claves: 310.730954ms
+Tiempo de cifrado 1: 375.457µs
+Tiempo de cifrado 2 (cambio de clave): 656.306647ms
+Tiempo de descifrado: 284.779µs
+Tiempo de ejecución total: 967.766843ms
