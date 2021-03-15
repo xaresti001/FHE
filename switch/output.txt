@@ -3,20 +3,35 @@
 PRIMERA IMPLEMENTACIÓN: cifrado y descifrado 
 
 Mensaje original: [-6.276, 4.3, 0.12, -1.1, 7.78]
-Mensaje descifrado: [-6.275486790744813, 4.298090323842706, 0.12246664133068386, -1.1001328579808511, 7.7813067723005]
-Tiempo generando claves: 5.616777ms
-Tiempo de cifrado: 2.143511ms
-Tiempo de descifrado: 971.312µs
-Tiempo de ejecución total: 9.753278ms
+Mensaje descifrado: [-6.27394826688726, 4.30208706030357, 0.11658207808530285, -1.1015113204286209, 7.781905204441362]
+Tiempo generando claves: 5.773539ms
+Tiempo de cifrado: 2.114004ms
+Tiempo de descifrado: 965.39µs
+Tiempo de ejecución total: 9.915717ms
 
  //////////////////////////////////// 
 
 SEGUNDA IMPLEMENTACIÓN: Key Switching 
 
 Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
-Mensaje descifrado: [106.27599979623855, 104.29999966123512, 100.11999979823906, 101.09999978612636, 107.78000036438466]
-Tiempo generando claves: 2.352717091s
-Tiempo de cifrado 1: 3.100656ms
-Tiempo de cifrado 2 (cambio de clave): 3.134988638s
-Tiempo de descifrado: 1.608713ms
-Tiempo de ejecución total: 5.492721403s
+Mensaje descifrado: [106.27600046572866, 104.30000023199746, 100.12000037577792, 101.10000002552638, 107.77999922344964]
+Tiempo generando claves: 2.342932547s
+Tiempo de cifrado 1: 3.093144ms
+Tiempo de cifrado 2 (cambio de clave): 3.0923163s
+Tiempo de descifrado: 1.579957ms
+Tiempo de ejecución total: 5.440218241s
+
+ //////////////////////////////////// 
+
+TERCERA IMPLEMENTACIÓN: Bootstrapping 
+
+Mensaje original: -5.0
+Loss of precision during bootstrap: 1 bit(s) of precision lost over 6 bit(s) of message originally. Consider increasing the number of level and/or decreasing the log base.
+Loss of precision during bootstrap due to the rounding: 1 bit(s) of precision lost over 6 bit(s) of message originally (6 bits are affected by the noise). Consider increasing the polynomial size of the RLWE secret key.
+before bootstrap: -5, after bootstrap: -5.233995660122994
+Mensaje descifrado: -5.233995660122994
+Tiempo generando claves: 1686.701065711s
+Tiempo de cifrado: 493.63µs
+Tiempo de Bootstrapping: 8.214702566s
+Tiempo de descifrado: 333.531µs
+Tiempo de ejecución total: 1694.916830221s
