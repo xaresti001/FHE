@@ -78,58 +78,6 @@ fn main() -> Result<(), CryptoAPIError> {
     println!("Tiempo de descifrado: {:?}", duration_decryption);
     println!("Tiempo de ejecución total: {:?}", start_key.elapsed());
     
-    
-    
-    
-    //////////////////////////////////////////////////////////////////////////////////7
-    
-    println!("\n //////////////////////////////////// \n");
-    println!("TERCERA IMPLEMENTACIÓN: Bootstrapping \n"); 
-        // encoders
-    let start_key = Instant::now();
-    let encoder_input = Encoder::new(-10., 10., 6, 1)?;
-    let encoder_output = Encoder::new(0., 101., 6, 0)?;
-
-    // secret keys
-    let sk_rlwe = RLWESecretKey::new(&RLWE128_1024_1);
-    let sk_in = LWESecretKey::new(&LWE128_630);
-    let sk_out = sk_rlwe.to_lwe_secret_key();
-
-    // bootstrapping key
-    let bsk = LWEBSK::new(&sk_in, &sk_rlwe, 5, 3);
-    let duration_key = start_key.elapsed();
-    
-    
-
-    // messages
-    let message: f64 = -5.;
-    println!("Mensaje original: {:?}", message);
-
-
-
-    // encode and encrypt
-    let start_encryption1 = Instant::now();
-    let c1 = LWE::encode_encrypt(&sk_in, message, &encoder_input)?;
-    let duration_encryption1 = start_encryption1.elapsed();
-
-    // bootstrap
-    let start_encryption2 = Instant::now();
-    let c2 = c1.bootstrap(&bsk)?;
-    let duration_encryption2 = start_encryption2.elapsed();
-
-    // decrypt
-    let start_decryption = Instant::now();
-    let output = c2.decrypt_decode(&sk_out)?;
-    let duration_decryption = start_decryption.elapsed();
-
-    println!("before bootstrap: {}, after bootstrap: {}", message, output);
-
-    println!("Mensaje descifrado: {:?}", output);
-    println!("Tiempo generando claves: {:?}", duration_key);
-    println!("Tiempo de cifrado: {:?}", duration_encryption1);
-    println!("Tiempo de Bootstrapping: {:?}", duration_encryption2);
-    println!("Tiempo de descifrado: {:?}", duration_decryption);
-    println!("Tiempo de ejecución total: {:?}", start_key.elapsed());
 
     Ok(())
 }
