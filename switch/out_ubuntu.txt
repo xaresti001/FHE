@@ -1,0 +1,37 @@
+
+
+PRIMERA IMPLEMENTACIÓN: cifrado y descifrado 
+
+Mensaje original: [-6.276, 4.3, 0.12, -1.1, 7.78]
+Mensaje descifrado: [-6.277500753029981, 4.299499461031974, 0.12126797897233565, -1.1012739161114133, 7.781662099093641]
+Tiempo generando claves: 11.503297ms
+Tiempo de cifrado: 1.061161ms
+Tiempo de descifrado: 832.198µs
+Tiempo de ejecución total: 13.94549ms
+
+ //////////////////////////////////// 
+
+SEGUNDA IMPLEMENTACIÓN: Key Switching 
+
+Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
+Mensaje descifrado: [106.27600012971203, 104.29999989668984, 100.12000050629341, 101.1000002704085, 107.78000008235762]
+Tiempo generando claves: 727.711514ms
+Tiempo de cifrado 1: 722.415µs
+Tiempo de cifrado 2 (cambio de clave): 767.217181ms
+Tiempo de descifrado: 734.888µs
+Tiempo de ejecución total: 1.496500379s
+
+ //////////////////////////////////// 
+
+TERCERA IMPLEMENTACIÓN: Bootstrapping 
+
+Mensaje original: -5.0
+Loss of precision during bootstrap: 1 bit(s) of precision lost over 6 bit(s) of message originally. Consider increasing the number of level and/or decreasing the log base.
+Loss of precision during bootstrap due to the rounding: 1 bit(s) of precision lost over 6 bit(s) of message originally (6 bits are affected by the noise). Consider increasing the polynomial size of the RLWE secret key.
+before bootstrap: -5, after bootstrap: -5.11060295477559
+Mensaje descifrado: -5.11060295477559
+Tiempo generando claves: 462.72831188s
+Tiempo de cifrado: 141.582µs
+Tiempo de Bootstrapping: 2.597975169s
+Tiempo de descifrado: 113.482µs
+Tiempo de ejecución total: 465.326633256s
