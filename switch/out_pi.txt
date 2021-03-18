@@ -3,23 +3,23 @@
 PRIMERA IMPLEMENTACIÓN: cifrado y descifrado 
 
 Mensaje original: [-6.276, 4.3, 0.12, -1.1, 7.78]
-Mensaje descifrado: [-6.275457598462179, 4.301117143050641, 0.12020322502391423, -1.0998654738316684, 7.778860165500198]
-Tiempo generando claves: 5.810775ms
-Tiempo de cifrado: 2.170491ms
-Tiempo de descifrado: 970.364µs
-Tiempo de ejecución total: 9.973822ms
+Mensaje descifrado: [-6.275590664461199, 4.301469677924434, 0.1227817271065188, -1.0995049880596497, 7.78021017435627]
+Tiempo generando claves: 22.156988ms
+Tiempo de cifrado: 2.123619ms
+Tiempo de descifrado: 964.392µs
+Tiempo de ejecución total: 25.959555ms
 
  //////////////////////////////////// 
 
 SEGUNDA IMPLEMENTACIÓN: Key Switching 
 
 Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
-Mensaje descifrado: [106.27600005566752, 104.29999997163095, 100.12000014947857, 101.1000003225208, 107.7799996718349]
-Tiempo generando claves: 2.356010385s
-Tiempo de cifrado 1: 3.064493ms
-Tiempo de cifrado 2 (cambio de clave): 3.138265706s
-Tiempo de descifrado: 1.594857ms
-Tiempo de ejecución total: 5.499244901s
+Mensaje descifrado: [106.27599975474709, 104.3000000731732, 100.11999992572854, 101.09999985755326, 107.77999953819135]
+Tiempo generando claves: 2.348435002s
+Tiempo de cifrado 1: 3.080458ms
+Tiempo de cifrado 2 (cambio de clave): 3.093086435s
+Tiempo de descifrado: 1.575879ms
+Tiempo de ejecución total: 5.446467294s
 
  //////////////////////////////////// 
 
@@ -28,10 +28,10 @@ TERCERA IMPLEMENTACIÓN: Bootstrapping
 Mensaje original: -5.0
 Loss of precision during bootstrap: 1 bit(s) of precision lost over 6 bit(s) of message originally. Consider increasing the number of level and/or decreasing the log base.
 Loss of precision during bootstrap due to the rounding: 1 bit(s) of precision lost over 6 bit(s) of message originally (6 bits are affected by the noise). Consider increasing the polynomial size of the RLWE secret key.
-before bootstrap: -5, after bootstrap: -4.5060541863512995
-Mensaje descifrado: -4.5060541863512995
-Tiempo generando claves: 1688.027605395s
-Tiempo de cifrado: 527.605µs
-Tiempo de Bootstrapping: 8.25495858s
-Tiempo de descifrado: 334.533µs
-Tiempo de ejecución total: 1696.283688717s
+before bootstrap: -5, after bootstrap: -5.199859997714913
+Mensaje descifrado: -5.199859997714913
+Tiempo generando claves: 1651.876580166s
+Tiempo de cifrado: 497.027µs
+Tiempo de Bootstrapping: 8.246339068s
+Tiempo de descifrado: 336.125µs
+Tiempo de ejecución total: 1660.123986138s
