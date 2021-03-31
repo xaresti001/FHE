@@ -31,7 +31,7 @@ fn main() -> Result<(), CryptoAPIError> {
     
     
     // Resultados finales
-    println!("Mensaje descifrado: {:?}", outputs);
+    println!("Mensaje descifrado: {:?}\n", outputs);
     println!("Tiempo generando claves: {:?}", duration_key);
     println!("Tiempo de cifrado: {:?}", duration_encryption);
     println!("Tiempo de descifrado: {:?}", duration_decryption);
@@ -78,7 +78,7 @@ fn main() -> Result<(), CryptoAPIError> {
     
     
     // Resultados finales
-    println!("Mensaje descifrado: {:?}", outputs);
+    println!("Mensaje descifrado: {:?}\n", outputs);
     println!("Tiempo generando claves: {:?}", duration_key);
     println!("Tiempo de cifrado 1: {:?}", duration_encryption1);
     println!("Tiempo de cifrado 2 (cambio de clave): {:?}", duration_encryption2);
@@ -123,7 +123,7 @@ fn main() -> Result<(), CryptoAPIError> {
     // Resultados finales
     println!("Mensaje original: {:?}", messages);
     println!("Vector de constantes: {:?}", constants);
-    println!("Mensaje descifrado: {:?}", outputs);
+    println!("Mensaje descifrado: {:?}\n", outputs);
     println!("Tiempo generando claves: {:?}", duration_key);
     println!("Tiempo de cifrado 1: {:?}", duration_encryption);
     println!("Tiempo transcurrido en la suma: {:?}", duration_addition);
@@ -164,7 +164,7 @@ fn main() -> Result<(), CryptoAPIError> {
     // Resultados finales
     println!("Mensaje 1: {:?}", mv1);
     println!("Mensaje 2: {:?}", mv2);
-    println!("Mensaje descifrado: {:?}", outputs);
+    println!("Mensaje descifrado: {:?}\n", outputs);
     println!("Tiempo generando claves: {:?}", duration_key);
     println!("Tiempo de cifrado 1: {:?}", duration_encryption);
     println!("Tiempo transcurrido en la suma: {:?}", duration_addition);
@@ -172,7 +172,7 @@ fn main() -> Result<(), CryptoAPIError> {
     println!("Tiempo de ejecución total: {:?}\n\n", start_key.elapsed());
     
     
-    println!("--- Multiplicar un vector de contantes por un mensaje cifrado ---\n");
+    println!("--- Multiplicar un vector de constantes por un mensaje cifrado ---\n");
     
     // generate a secret key
     let start_key = Instant::now(); // Comenzar temporizador
@@ -202,7 +202,7 @@ fn main() -> Result<(), CryptoAPIError> {
     // Resultados finales
     println!("Mensaje original: {:?}", messages);
     println!("Vector de constantes: {:?}", constants);
-    println!("Mensaje descifrado: {:?}", outputs);
+    println!("Mensaje descifrado: {:?}\n", outputs);
     println!("Tiempo generando claves: {:?}", duration_key);
     println!("Tiempo de cifrado 1: {:?}", duration_encryption);
     println!("Tiempo transcurrido en la multiplicación: {:?}", duration_mult);
@@ -210,8 +210,6 @@ fn main() -> Result<(), CryptoAPIError> {
     println!("Tiempo de ejecución total: {:?}\n\n", start_key.elapsed());
     
     
-
-
     //////////////////////////////////////////////////////////////////////////////////
     
     println!("\n //////////////////////////////////// \n");
@@ -261,6 +259,8 @@ fn main() -> Result<(), CryptoAPIError> {
     println!("Tiempo de Bootstrapping: {:?}", duration_encryption2);
     println!("Tiempo de descifrado: {:?}", duration_decryption);
     println!("Tiempo de ejecución total: {:?}", start_key.elapsed());
+    
+
     
 
     Ok(())
