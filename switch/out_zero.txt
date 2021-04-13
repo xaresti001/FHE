@@ -3,35 +3,81 @@
 PRIMERA IMPLEMENTACIÓN: cifrado y descifrado 
 
 Mensaje original: [-6.276, 4.3, 0.12, -1.1, 7.78]
-Mensaje descifrado: [-6.276486382694971, 4.298753343191862, 0.12086835501334292, -1.1003813078613351, 7.78110066967967]
-Tiempo generando claves: 103.96947ms
-Tiempo de cifrado: 14.086928ms
-Tiempo de descifrado: 2.222988ms
-Tiempo de ejecución total: 122.523375ms
+Mensaje descifrado: [-6.276721378840436, 4.298228954756304, 0.12236853407151393, -1.1018026530316405, 7.778681798337857]
+
+Tiempo generando claves: 94.345476ms
+Tiempo de cifrado: 14.605919ms
+Tiempo de descifrado: 2.301987ms
+Tiempo de ejecución total: 114.070367ms
 
  //////////////////////////////////// 
 
 SEGUNDA IMPLEMENTACIÓN: Key Switching 
 
 Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
-Mensaje descifrado: [106.27600028191085, 104.2999997378273, 100.12000001398108, 101.09999948142114, 107.78000009649037]
-Tiempo generando claves: 6.973071455s
-Tiempo de cifrado 1: 8.688955ms
-Tiempo de cifrado 2 (cambio de clave): 7.728327591s
-Tiempo de descifrado: 3.617982ms
-Tiempo de ejecución total: 14.714391979s
+Mensaje descifrado: [106.2760001460988, 104.30000025971218, 100.11999933590315, 101.09999995598137, 107.77999917311894]
+
+Tiempo generando claves: 6.78105549s
+Tiempo de cifrado 1: 8.39396ms
+Tiempo de cifrado 2 (cambio de clave): 7.750148285s
+Tiempo de descifrado: 3.547986ms
+Tiempo de ejecución total: 14.543890718s
 
  //////////////////////////////////// 
 
-TERCERA IMPLEMENTACIÓN: Bootstrapping 
+TERCERA IMPLEMENTACIÓN: Operaciones Homomórficas (Leveled Operations) 
+
+--- Sumar un vector de contantes a un mensaje cifrado ---
+
+Mensaje original: [106.276, 104.3, 100.12, 101.1, 107.78]
+Vector de constantes: [-4.9, 1.02, 4.6, 5.6, -3.2]
+Mensaje descifrado: [101.37599587278683, 105.32000324744452, 104.72000309378808, 106.6999969288922, 104.58000219430654]
+
+Tiempo generando claves: 199.999µs
+Tiempo de cifrado 1: 8.286967ms
+Tiempo transcurrido en la suma: 37µs
+Tiempo de descifrado: 3.633985ms
+Tiempo de ejecución total: 12.784949ms
+
+
+--- Sumar mensajes cifrados ---
+
+Mensaje 1: [1.2, 4.3, 0.11, 3.1, 6.7]
+Mensaje 2: [7.0, 1.0, 8.2, 3.7, 9.4]
+Mensaje descifrado: [8.198218597813913, 5.298451662696607, 8.31031111757915, 6.803995801386091, 16.100939843354016]
+
+Tiempo generando claves: 184.999µs
+Tiempo de cifrado 1: 11.113955ms
+Tiempo transcurrido en la suma: 3.410986ms
+Tiempo de descifrado: 2.173992ms
+Tiempo de ejecución total: 17.527929ms
+
+
+--- Multiplicar un vector de constantes por un mensaje cifrado ---
+
+Mensaje original: [6.1, 5.4, -2.7]
+Vector de constantes: [-4, 5, 3]
+Mensaje descifrado: [-24.399996393511362, 26.999998933420436, -8.099996652966109]
+
+Tiempo generando claves: 200.999µs
+Tiempo de cifrado 1: 5.185979ms
+Tiempo transcurrido en la multiplicación: 1.209995ms
+Tiempo de descifrado: 2.096992ms
+Tiempo de ejecución total: 9.328962ms
+
+
+
+ //////////////////////////////////// 
+
+CUARTA IMPLEMENTACIÓN: Bootstrapping 
 
 Mensaje original: -5.0
 Loss of precision during bootstrap: 1 bit(s) of precision lost over 6 bit(s) of message originally. Consider increasing the number of level and/or decreasing the log base.
 Loss of precision during bootstrap due to the rounding: 1 bit(s) of precision lost over 6 bit(s) of message originally (6 bits are affected by the noise). Consider increasing the polynomial size of the RLWE secret key.
-before bootstrap: -5, after bootstrap: -4.703981564532088
-Mensaje descifrado: -4.703981564532088
-Tiempo generando claves: 3939.026590488s
-Tiempo de cifrado: 1.298991ms
-Tiempo de Bootstrapping: 23.94886216s
-Tiempo de descifrado: 788.994µs
-Tiempo de ejecución total: 3962.979415621s
+before bootstrap: -5, after bootstrap: -5.057670970134462
+Mensaje descifrado: -5.057670970134462
+Tiempo generando claves: 3841.237579721s
+Tiempo de cifrado: 1.307996ms
+Tiempo de Bootstrapping: 24.458926982s
+Tiempo de descifrado: 734.998µs
+Tiempo de ejecución total: 3865.699342694s
